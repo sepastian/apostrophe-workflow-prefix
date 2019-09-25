@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+  mongo:
+    image: mongo:4.0
+    hostname: mongo
+    restart: unless-stopped
+    volumes:
+      - ./mongo:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles
+    restart: always

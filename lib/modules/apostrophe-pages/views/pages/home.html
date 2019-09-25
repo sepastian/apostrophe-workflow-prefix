@@ -1,0 +1,20 @@
+{#
+  This is an example home page template. It inherits and extends a layout template
+  that lives in the top-level views/ folder for convenience
+#}
+
+{% extends "layout.html" %}
+
+{% block main %}
+  <div class="main-content">
+      <h3>
+          {{ data.page.title }}
+          {% if not data.user %}
+          <a class="login-link" href="{{ apos.prefix }}/login">Login</a>
+          {% endif %}
+      </h3>
+      <p>
+          Locale: {{ data.page.workflowLocale }}
+      </p>
+  </div>
+{% endblock %}
